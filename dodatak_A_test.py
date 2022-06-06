@@ -1,4 +1,5 @@
 import unittest
+import math
 from dodatak_A import OperationsManager
 
 
@@ -8,7 +9,7 @@ class TestOperationsManager(unittest.TestCase):
         a = 10.0
         b = 0.0
         om = OperationsManager(a, b)
-        self.assertEqual(om.perform_division(), 0)
+        self.assertTrue(math.isnan(om.perform_division()))
 
     def test_div_two_positives(self):
         a = 10.0

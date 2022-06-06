@@ -9,13 +9,16 @@ class OperationsManager():
 
     def perform_division(self) -> float:
         """Divides a with b. If b is zero, returns NaN."""
+        if self.b == 0:
+            return float('NaN')
         return self.a / self.b
 
 
 if __name__ == "__main__":
     user = input("Username: ")
     password = getpass.getpass("Password: ")
-    if user != "root" or password != "123":
+    correct_password = getpass.getpass("Password: ")
+    if user != "root" or password != correct_password:
         print("Wrong username or password!")
         exit(0)
     else:
